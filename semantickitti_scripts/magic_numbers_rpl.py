@@ -1,0 +1,14 @@
+OUTPUT_DIR = '../../semantic_kitti/checkpoints'
+TRAIN_WHOLE_MODEL = False
+# REAL
+REAL_LOSS = False
+CALIBRATION_LOSS = False
+# PEBAL
+ENERGY_LOSS = False
+GAMBLER_LOSS = False
+GAUSSIAN_FILTER = True
+
+LR_DROP_STEP_SIZE = 10
+
+ENABLE_RPL = True
+RPL_ENERGY_WEIGHT = 0.05

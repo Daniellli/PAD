@@ -1,0 +1,1461 @@
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:20:57.787769
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_0.pt'
+val_cylinder_asym_ood.py --load_path ../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_0.pt
+Namespace(config_path='config/semantickitti_ood_final.yaml', dummynumber=3, load_path='../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_0.pt', speed_test=None)
+
+Energy VAL_ENERGY_UNCERTAINTY:        False
+
+[480 360  32]
+Loading ../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_0.pt
+matched parameter sets: 294, and no matched: 0
+Load checkpoint file successfully!
+number of params: 49634105
+  0%|          | 0/4071 [00:00<?, ?it/s]  0%|          | 1/4071 [00:05<6:14:18,  5.52s/it]  0%|          | 2/4071 [00:05<2:47:00,  2.46s/it]  0%|          | 3/4071 [00:06<1:45:34,  1.56s/it]  0%|          | 4/4071 [00:06<1:12:37,  1.07s/it]  0%|          | 5/4071 [00:07<56:38,  1.20it/s]    0%|          | 6/4071 [00:07<46:18,  1.46it/s]  0%|          | 7/4071 [00:08<45:28,  1.49it/s]  0%|          | 8/4071 [00:08<41:18,  1.64it/s]  0%|          | 9/4071 [00:09<48:49,  1.39it/s]  0%|          | 10/4071 [00:09<41:20,  1.64it/s]  0%|          | 11/4071 [00:11<58:03,  1.17it/s]Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 512, in <module>
+    main(args)
+  File "val_cylinder_asym_ood.py", line 308, in main
+    coor_ori, output_normal_dummy = my_model.forward_dummy_final(
+  File "/data1/liyang/Open_world_3D_semantic_segmentation/semantickitti_scripts/../network/cylinder_spconv_3d.py", line 175, in forward_dummy_final
+    spatial_features = self.cylinder_3d_spconv_seg.forward_dummy_final(features_3d, coords, batch_size, ood_num, PROCESS_BLOCK_3=PROCESS_BLOCK_3, PROCESS_BLOCK_4=PROCESS_BLOCK_4)
+  File "/data1/liyang/Open_world_3D_semantic_segmentation/semantickitti_scripts/../network/segmentator_3d_asymm_spconv.py", line 1156, in forward_dummy_final
+    up0e_normal = self.forward_no_logits(voxel_features, coors, batch_size, PROCESS_BLOCK_3=PROCESS_BLOCK_3,
+  File "/data1/liyang/Open_world_3D_semantic_segmentation/semantickitti_scripts/../network/segmentator_3d_asymm_spconv.py", line 964, in forward_no_logits
+    up3e = self.upBlock1(up4e, down3b)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/data1/liyang/Open_world_3D_semantic_segmentation/semantickitti_scripts/../network/segmentator_3d_asymm_spconv.py", line 192, in forward
+    upA = self.trans_dilao(x)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/conv.py", line 552, in forward
+    out_features = Fsp.implicit_gemm(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/cuda/amp/autocast_mode.py", line 105, in decorate_fwd
+    return fwd(*args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/functional.py", line 210, in forward
+    out, mask_out, mask_width = ops.implicit_gemm(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/ops.py", line 1459, in implicit_gemm
+    stream = get_current_stream()
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/cppcore.py", line 93, in get_current_stream
+    return torch.cuda.current_stream().cuda_stream
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/cuda/__init__.py", line 592, in current_stream
+    return Stream(_cdata=torch._C._cuda_getCurrentStream(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/cuda/streams.py", line 34, in __new__
+    return super(Stream, cls).__new__(cls, priority=priority, **kwargs)
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:30.100516
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_1.pt'
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:30.118624
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_2.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 15, in <module>
+    import spconv.pytorch as spconv
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/__init__.py", line 7, in <module>
+    from spconv.pytorch import functional, ops
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/functional.py", line 24, in <module>
+    from spconv.pytorch import ops, SparseConvTensor
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/ops.py", line 38, in <module>
+    from spconv.algo import GEMM, CONV, GEMM_CPP, CONV_CPP
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algo.py", line 1004, in <module>
+    GEMM = SimpleGemm(ALL_ALGO_DESPS)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algo.py", line 213, in __init__
+    all_desps = [
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algo.py", line 214, in <listcomp>
+    algocore.get_gemm_algo_desp_from_param(p)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algocore.py", line 63, in get_gemm_algo_desp_from_param
+    ker = gen_gemm_kernels(p)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/main.py", line 289, in gen_gemm_kernels
+    return kernel.GemmKernel(params.ts,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/kernel.py", line 501, in __init__
+    self.gemm_params = GemmParams(tile_shape, dtype_a, dtype_b, dtype_c,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/kernel.py", line 126, in __init__
+    self.add_member("alpha, beta, act_alpha, act_beta", f"{dtype_comp}")
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 1309, in add_member
+    Member(part.strip(), type, default, array, pyanno, mw_metas,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 456, in __init__
+    super().__init__(name, type, default, array, pyanno, doc)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/funccode.py", line 20, in __init__
+    self.attrs: List[Attr] = []
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:31.953452
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_3.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 9, in <module>
+    import argparse
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/argparse.py", line 89, in <module>
+    import shutil as _shutil
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/shutil.py", line 10, in <module>
+    import fnmatch
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 914, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1407, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1379, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1534, in find_spec
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:32.005990
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_4.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 163, in <module>
+    from . import ma
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/ma/__init__.py", line 45, in <module>
+    from . import extras
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/ma/extras.py", line 352, in <module>
+    stack = _fromnxfunction_seq('stack')
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/ma/extras.py", line 237, in __init__
+    self.__doc__ = self.getdoc()
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/ma/extras.py", line 256, in getdoc
+    doc = ma.doc_note(doc, "The function is applied to both the _data "
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/ma/core.py", line 126, in doc_note
+    notesplit = re.split(r'\n\s*?Notes\n\s*?-----', inspect.cleandoc(initialdoc))
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:32.241108
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_5.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 12, in <module>
+    import torch
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/__init__.py", line 884, in <module>
+    from torch import hub as hub
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/hub.py", line 20, in <module>
+    from tqdm.auto import tqdm  # automatically select proper tqdm submodule if available
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/tqdm/auto.py", line 29, in <module>
+    from .asyncio import tqdm as asyncio_tqdm
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/tqdm/asyncio.py", line 10, in <module>
+    import asyncio
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/asyncio/__init__.py", line 17, in <module>
+    from .streams import *
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/asyncio/streams.py", line 390, in <module>
+    class StreamReader:
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/asyncio/streams.py", line 737, in StreamReader
+    async def __anext__(self):
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:33.422061
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_6.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 12, in <module>
+    import torch
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/__init__.py", line 218, in <module>
+    from torch._C import *  # noqa: F403
+RuntimeError: KeyboardInterrupt: <EMPTY MESSAGE>
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.335271
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_7.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 21, in <module>
+    from pathlib import Path
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/pathlib.py", line 4, in <module>
+    import ntpath
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 898, in _find_spec
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.413409
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_8.pt'
+Traceback (most recent call last):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 7, in <module>
+    from numpy.core._multiarray_umath import (
+ImportError: PyCapsule_Import could not import module "datetime"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 48, in <module>
+    raise ImportError(msg)
+ImportError: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.8 from "/data1/liyang/anaconda3/envs/yang_real/bin/python"
+  * The NumPy version is: "1.21.0"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: PyCapsule_Import could not import module "datetime"
+
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.489724
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_9.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 21, in <module>
+    from pathlib import Path
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/pathlib.py", line 1025, in <module>
+    class Path(PurePath):
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.576687
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_10.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 959, in get_code
+  File "<frozen importlib._bootstrap_external>", line 605, in _validate_timestamp_pyc
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.647461
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_11.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 21, in <module>
+    from pathlib import Path
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 971, in get_code
+  File "<frozen importlib._bootstrap_external>", line 640, in _compile_bytecode
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.758110
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_12.pt'
+Traceback (most recent call last):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 7, in <module>
+    from numpy.core._multiarray_umath import (
+ImportError: PyCapsule_Import could not import module "datetime"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 48, in <module>
+    raise ImportError(msg)
+ImportError: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.8 from "/data1/liyang/anaconda3/envs/yang_real/bin/python"
+  * The NumPy version is: "1.21.0"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: PyCapsule_Import could not import module "datetime"
+
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.826902
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_13.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 21, in <module>
+    from pathlib import Path
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 971, in get_code
+  File "<frozen importlib._bootstrap_external>", line 640, in _compile_bytecode
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.900859
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_14.pt'
+Traceback (most recent call last):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 7, in <module>
+    from numpy.core._multiarray_umath import (
+ImportError: PyCapsule_Import could not import module "datetime"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 48, in <module>
+    raise ImportError(msg)
+ImportError: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.8 from "/data1/liyang/anaconda3/envs/yang_real/bin/python"
+  * The NumPy version is: "1.21.0"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: PyCapsule_Import could not import module "datetime"
+
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:34.988477
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_15.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 21, in <module>
+    from pathlib import Path
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/pathlib.py", line 4, in <module>
+    import ntpath
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/ntpath.py", line 518, in <module>
+    from nt import _getfullpathname
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 914, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1407, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1379, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1534, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 123, in _path_join
+  File "<frozen importlib._bootstrap_external>", line 123, in <listcomp>
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.090434
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_16.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 138, in <module>
+    from ._version import get_versions
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/_version.py", line 7, in <module>
+    import json
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/json/__init__.py", line 107, in <module>
+    from .encoder import JSONEncoder
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/json/encoder.py", line 19, in <module>
+    ESCAPE_ASCII = re.compile(r'([\\"]|[^\ -~])')
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/re.py", line 252, in compile
+    return _compile(pattern, flags)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/re.py", line 304, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_compile.py", line 780, in compile
+    return _sre.compile(
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.147433
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_17.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 9, in <module>
+    import argparse
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/argparse.py", line 89, in <module>
+    import shutil as _shutil
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/shutil.py", line 1130, in <module>
+    def _unpack_zipfile(filename, extract_dir):
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.244070
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_18.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 9, in <module>
+    import argparse
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/argparse.py", line 88, in <module>
+    import re as _re
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/re.py", line 125, in <module>
+    import sre_compile
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_compile.py", line 14, in <module>
+    import sre_parse
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_parse.py", line 15, in <module>
+    from sre_constants import *
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 657, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 562, in module_from_spec
+  File "<frozen importlib._bootstrap>", line 541, in _init_module_attrs
+  File "<frozen importlib._bootstrap>", line 382, in cached
+  File "<frozen importlib._bootstrap_external>", line 487, in _get_cached
+  File "<frozen importlib._bootstrap_external>", line 380, in cache_from_source
+  File "<frozen importlib._bootstrap_external>", line 127, in _path_split
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.312401
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_19.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 4, in <module>
+    import copy
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.409217
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_20.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 9, in <module>
+    import argparse
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/argparse.py", line 89, in <module>
+    import shutil as _shutil
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/shutil.py", line 22, in <module>
+    import bz2
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/bz2.py", line 17, in <module>
+    from threading import RLock
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 971, in get_code
+  File "<frozen importlib._bootstrap_external>", line 640, in _compile_bytecode
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.480876
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_21.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 56, in <module>
+    from . import umath
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 934, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_data
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.584092
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_22.pt'
+Traceback (most recent call last):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 7, in <module>
+    from numpy.core._multiarray_umath import (
+ImportError: PyCapsule_Import could not import module "datetime"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 48, in <module>
+    raise ImportError(msg)
+ImportError: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.8 from "/data1/liyang/anaconda3/envs/yang_real/bin/python"
+  * The NumPy version is: "1.21.0"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: PyCapsule_Import could not import module "datetime"
+
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.655840
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_23.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 914, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1407, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1379, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1524, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 123, in _path_join
+  File "<frozen importlib._bootstrap_external>", line 123, in <listcomp>
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.738404
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_24.pt'
+Traceback (most recent call last):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 28, in <module>
+    import pickle5 as pickle
+ModuleNotFoundError: No module named 'pickle5'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 30, in <module>
+    import pickle
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/pickle.py", line 43, in <module>
+    from _pickle import PickleBuffer
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 914, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1407, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1379, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1538, in find_spec
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.829021
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_25.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 21, in <module>
+    from pathlib import Path
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/pathlib.py", line 394, in <module>
+    class _Accessor:
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:35.908973
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_26.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 15, in <module>
+    import spconv.pytorch as spconv
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/__init__.py", line 7, in <module>
+    from spconv.pytorch import functional, ops
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/functional.py", line 24, in <module>
+    from spconv.pytorch import ops, SparseConvTensor
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/pytorch/ops.py", line 38, in <module>
+    from spconv.algo import GEMM, CONV, GEMM_CPP, CONV_CPP
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algo.py", line 1004, in <module>
+    GEMM = SimpleGemm(ALL_ALGO_DESPS)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algo.py", line 213, in __init__
+    all_desps = [
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algo.py", line 214, in <listcomp>
+    algocore.get_gemm_algo_desp_from_param(p)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/spconv/algocore.py", line 63, in get_gemm_algo_desp_from_param
+    ker = gen_gemm_kernels(p)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/main.py", line 289, in gen_gemm_kernels
+    return kernel.GemmKernel(params.ts,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/kernel.py", line 449, in __init__
+    algo_spec = get_algo_spec(self.algo)(tile_shape, warp_tile_shape,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/algospec/turing.py", line 549, in __init__
+    self.mma_spec = MmaTuring(self.input_spec, tile_shape, warp_tile_shape,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/algospec/turing.py", line 251, in __init__
+    self._smem_iter_a = turing_my_iters.SmemTileIterator(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/turing_my_iters.py", line 732, in __init__
+    super().__init__(dtype,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/bases.py", line 117, in __init__
+    super().__init__(dtype, element_per_acc, alignment, access_per_vector)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/cumm/gemm/bases.py", line 44, in __init__
+    super().__init__()
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 920, in wrapper
+    func(self, *args, **kwargs)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/pccm/core/__init__.py", line 1096, in __init__
+    self._build_meta = BuildMeta()
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:38.176068
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_27.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 12, in <module>
+    import torch
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/torch/__init__.py", line 218, in <module>
+    from torch._C import *  # noqa: F403
+RuntimeError: KeyboardInterrupt: <EMPTY MESSAGE>
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.037213
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_28.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 5, in <module>
+    import textwrap
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/textwrap.py", line 17, in <module>
+    class TextWrapper:
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/textwrap.py", line 81, in TextWrapper
+    wordsep_re = re.compile(r'''
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/re.py", line 252, in compile
+    return _compile(pattern, flags)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/re.py", line 304, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_parse.py", line 948, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_parse.py", line 443, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_parse.py", line 834, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_parse.py", line 443, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_parse.py", line 554, in _parse
+    code1 = _class_escape(source, this)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/sre_parse.py", line 350, in _class_escape
+    return LITERAL, ord(escape[1])
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.100538
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_29.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 1410, in <module>
+    def is_busday(dates, weekmask=None, holidays=None, busdaycal=None, out=None):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 224, in decorator
+    return array_function_dispatch(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 197, in decorator
+    source_object = compile(
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.218243
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_30.pt'
+Fatal Python error: init_import_size: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site.py", line 580, in <module>
+    main()
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site.py", line 567, in main
+    known_paths = addsitepackages(known_paths)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site.py", line 350, in addsitepackages
+    addsitedir(sitedir, known_paths)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site.py", line 208, in addsitedir
+    addpackage(sitedir, name, known_paths)
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site.py", line 169, in addpackage
+    exec(line)
+  File "<string>", line 1, in <module>
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/importlib/util.py", line 14, in <module>
+    from contextlib import contextmanager
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/contextlib.py", line 6, in <module>
+    from functools import wraps
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 657, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 562, in module_from_spec
+  File "<frozen importlib._bootstrap>", line 541, in _init_module_attrs
+  File "<frozen importlib._bootstrap>", line 382, in cached
+  File "<frozen importlib._bootstrap_external>", line 485, in _get_cached
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.259461
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_31.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 1464, in <module>
+    def busday_offset(dates, offsets, roll=None, weekmask=None, holidays=None,
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 224, in decorator
+    return array_function_dispatch(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 197, in decorator
+    source_object = compile(
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.376346
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_32.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 914, in _find_spec
+  File "<frozen importlib._bootstrap>", line 867, in __exit__
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.443022
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_33.pt'
+Traceback (most recent call last):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 28, in <module>
+    import pickle5 as pickle
+ModuleNotFoundError: No module named 'pickle5'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 28, in <module>
+    import pickle5 as pickle
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.521070
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_34.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 342, in <module>
+    def where(condition, x=None, y=None):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 224, in decorator
+    return array_function_dispatch(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 197, in decorator
+    source_object = compile(
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.606290
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_35.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 81, in <module>
+    def empty_like(prototype, dtype=None, order=None, subok=None, shape=None):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 224, in decorator
+    return array_function_dispatch(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 197, in decorator
+    source_object = compile(
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.690213
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_36.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 72, in <module>
+    from . import numeric
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 971, in get_code
+  File "<frozen importlib._bootstrap_external>", line 640, in _compile_bytecode
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.769155
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_37.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 56, in <module>
+    from . import umath
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.859427
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_38.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 1022, in <module>
+    def unravel_index(indices, shape=None, order=None):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 224, in decorator
+    return array_function_dispatch(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 197, in decorator
+    source_object = compile(
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:39.944326
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_39.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 12, in <module>
+    from . import overrides
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 9, in <module>
+    from numpy.compat._inspect import getargspec
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/__init__.py", line 12, in <module>
+    from . import py3k
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/compat/py3k.py", line 21, in <module>
+    from pathlib import Path
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 657, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 562, in module_from_spec
+  File "<frozen importlib._bootstrap>", line 526, in _init_module_attrs
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+
+
+
+
+
+
+################################################################################
+2023-03-18 14:21:40.022782
+CUDA_VISIBLE_DEVICES=7 python val_cylinder_asym_ood.py --load_path '../../semantic_kitti/checkpoints/Feb23_6_cards/model_epoch_40.pt'
+Traceback (most recent call last):
+  File "val_cylinder_asym_ood.py", line 11, in <module>
+    import numpy as np
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/__init__.py", line 150, in <module>
+    from . import core
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/__init__.py", line 22, in <module>
+    from . import multiarray
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/multiarray.py", line 81, in <module>
+    def empty_like(prototype, dtype=None, order=None, subok=None, shape=None):
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 224, in decorator
+    return array_function_dispatch(
+  File "/data1/liyang/anaconda3/envs/yang_real/lib/python3.8/site-packages/numpy/core/overrides.py", line 197, in decorator
+    source_object = compile(
+KeyboardInterrupt
+
+################################################################################
+
+
+
+
+

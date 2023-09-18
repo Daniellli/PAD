@@ -1,0 +1,75 @@
+# Config format schema number
+format_version: 4
+
+###################
+## Model options
+model_params:
+  model_architecture: "cylinder_asym"
+
+  output_shape:
+    - 480
+    - 360
+    - 32
+
+  fea_dim: 9
+  out_fea_dim: 256
+  num_class: 17
+  num_input_features: 16
+  use_norm: True
+  init_size: 32
+
+
+###################
+## Dataset options
+dataset_params:
+  dataset_type: "cylinder_dataset_nuscenes_panop"
+  pc_dataset_type: "SemKITTI_nusc_panop"
+  ignore_label: 0
+  return_test: False
+  fixed_volume_space: True
+  label_mapping: "config/label_mapping/nuscenes.yaml"
+  shapenet_path: "datasets/ShapeNet"
+  semantic_kitti_root: ""
+  max_volume_space:
+    - 50
+    - 3.1415926
+    - 3
+  min_volume_space:
+    - 0
+    - -3.1415926
+    - -5
+
+
+###################
+## Data_loader options
+train_data_loader:
+  data_path: "datasets/nuScenes/"
+  imageset: "datasets/nuScenes/lidarseg/nuscenes_infos_train.pkl"
+  return_ref: True
+  batch_size: 1
+  shuffle: True
+  num_workers: 1
+
+val_data_loader:
+  data_path: "datasets/nuScenes/"
+  imageset: "datasets/nuScenes/lidarseg/nuscenes_infos_val.pkl"
+  return_ref: True
+  batch_size: 4
+  shuffle: False
+  num_workers: 4
+
+
+###################
+## Train params
+
+train_params:
+  model_load_path: "datasets/nuScenes/checkpoints/Feb3_model_save_DML.pt"
+  # model_save_path: "datasets/nuScenes/checkpoints/Feb13_model_save_incre_1.pt"
+  model_save_path: "nuscenes_runs/2023-03-28-03:03:1679943804/model_epoch_14/model_epoch_14.pt"
+  model_latest_path: "datasets/nuScenes/checkpoints/Feb13_model_latest_incre_1.pt"
+  checkpoint_every_n_steps: 800
+  max_num_epochs: 50
+  eval_every_n_steps: 400
+  learning_rate: 1e-4
+  lamda_1: 0.01
+  lamda_2: 1
