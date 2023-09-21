@@ -1,5 +1,5 @@
 
-#  Learning Point-wise Abstaining Penalty for Point Cloud Anomaly Detection
+#  Learning Point-wise Abstaining Penalty for Point Cloud Anomaly Detection [[Paper](https://arxiv.org/abs/2309.10230)]
 
 
 Official implementation of 《Learning Point-wise Abstaining Penalty for Point Cloud Anomaly Detection》. After saving the corresponding inference result files using this repository, please use [semantic_kitti_api](https://github.com/Jun-CEN/semantic_kitti_api) and [nuScenes_api](https://github.com/Jun-CEN/nuScenes_api) to evaluate the performance.
