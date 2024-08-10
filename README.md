@@ -31,6 +31,8 @@ bash install.sh
 
 All of the datasets mentioned below are located in the "datasets" directory at the root of the repository.
 
+
+
 ### SemanticKITTI
 ```
 ./
@@ -121,13 +123,29 @@ All of the datasets mentioned below are located in the "datasets" directory at t
 ## Usage 
 All scripts for training and evaluation is in `./scripts`.
 
+### Model Zoo 
+
+
+
+
+
+| Dataset       | base segmentation model                                      | outlier segmentation model                                   |
+| ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| SemanticKITTI | [Baidu Disk](https://pan.baidu.com/s/14d9qlwqf85gzmVOxfmYm7w) (jpmn),  [Google Disk](https://drive.google.com/file/d/1TmKUnDM1qPVuIxsqKzHWd4rflnOL0P64/view?usp=drive_link) | [Baidu Disk](https://pan.baidu.com/s/1QEuGBLlevoCkkmy4d04pOQ) (pbqx), [Google Disk](https://drive.google.com/file/d/1Q3m5T5ao4eEm2Waqaoutwvf1Wk7pULYE/view?usp=drive_link) |
+| NuScenes      | [Baidu Disk](https://pan.baidu.com/s/1YqepjulUMmRfFS4XyQzyNg) ( h9gh),   [Google Disk](https://drive.google.com/file/d/1-Gm0vENsfFDYuX7Jzp6vKt7uUCT71PMn/view?usp=drive_link) | [Baidu Disk](https://pan.baidu.com/s/1Xe_XjAqQbD3TiT9iakkW9w) ( 69fa), [ Google Disk](https://drive.google.com/file/d/1HqbiC7igmGhBbaz72NF4NGx328ZB4CSz/view?usp=drive_link) |
+
+
+
+
+
+
 
 ### SemanticKITTI
 
 #### Traning 
 
 
-1. Download the [bese segmentation model](https://pan.baidu.com/s/14d9qlwqf85gzmVOxfmYm7w) ( extract code: jpmn) 
+1. Download the bese segmentation model
 2.  navigate to `/config/semantickitti_ood_final.yaml` and update the path for the pretrained naive model on line 73.
 3. Finally, execute the following command: 
 ```
@@ -138,7 +156,6 @@ bash scripts/train_kitti.sh
 #### Evaluation 
 
 1.  modify the resume_path variable in the `scripts/eval_kitti.sh` file to the appropriate path of the model.
-    - use [our trained model](https://pan.baidu.com/s/1QEuGBLlevoCkkmy4d04pOQ) (extract code: pbqx) to reproduce our performance
 2.  execute the following command: 
 
 
@@ -159,7 +176,7 @@ bash scripts/eval_kitti.sh
 #### Traning 
 
 
-1. Download the [bese nuscenes segmentation model](https://pan.baidu.com/s/1YqepjulUMmRfFS4XyQzyNg) ( extract code: h9gh)
+1. Download the bese nuscenes segmentation model
 2.  navigate to `/config/nuScenes_ood_final.yaml` and update the path for the pretrained naive model on line 66.
 3. Finally, execute the following command: 
 ```
@@ -168,10 +185,7 @@ bash scripts/train_nusc.sh
 
 
 #### Evaluation 
-
-
 1.  modify the resume_path variable in the `scripts/eval_nusc.sh` file to the appropriate path of the model.
-    - use [our trained model](https://pan.baidu.com/s/1Xe_XjAqQbD3TiT9iakkW9w) (extract code: 69fa) to reproduce our performance
 2.  execute the following command: 
 
 
