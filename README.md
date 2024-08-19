@@ -1,14 +1,16 @@
 
-#  Learning Point-wise Abstaining Penalty for Point Cloud Anomaly Detection [[Paper](https://arxiv.org/abs/2309.10230)]
+#  LiON: Learning Point-wise  Abstaining Penalty for LiDAR  Outlier DetectioN Using Diverse Synthetic Data 
 
 
-Official implementation of 《Learning Point-wise Abstaining Penalty for Point Cloud Anomaly Detection》. After saving the corresponding inference result files using this repository, please use [semantic_kitti_api](https://github.com/Jun-CEN/semantic_kitti_api) and [nuScenes_api](https://github.com/Jun-CEN/nuScenes_api) to evaluate the performance.
+Official implementation of 《LiON: Learning Point-wise  Abstaining Penalty for LiDAR  Outlier DetectioN Using Diverse Synthetic Data》. After saving the corresponding inference result files using this repository, please use [semantic_kitti_api](https://github.com/Jun-CEN/semantic_kitti_api) and [nuScenes_api](https://github.com/Jun-CEN/nuScenes_api) to evaluate the performance.
 
 ![teaser](imgs/main.png)
 
 
 ![kitti_qualitative](imgs/kitti_qualitative.png)
 ![nuscenes_qualitative](imgs/nuscene_qualitative.png)
+
+
 
 
 
